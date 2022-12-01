@@ -14,51 +14,22 @@ impl crate::Puzzle for DayOne {
 
     fn part_one(&self) -> String {
         let split = DayOne::split_input(self.input);
-
-        let mut i = 0;
-        let mut result = 0;
-
-        //  Loop over elves
-        while i < split.len() {
-            // Get the next elf
-            let elf: Vec<u32> = split[i..split.len()]
-                .iter()
-                .map_while(|x| x.parse::<u32>().ok())
-                .collect();
-            i += elf.len() + 1;
-
-            // Get the calories
-            let sum: u32 = elf.iter().sum();
-            if sum > result {
-                result = sum;
-            }
-        }
-
-        result.to_string()
+        let mut elves: Vec<u32> = split
+            .split(|x| x.is_empty())
+            .map(|x| x.iter().map(|c| c.parse::<u32>().unwrap()).sum())
+            .collect();
+        elves.sort_by(|a, b| b.cmp(a));
+        elves.first().unwrap().to_string()
     }
 
     fn part_two(&self) -> String {
         let split = DayOne::split_input(self.input);
-
-        let mut i = 0;
-        let mut result: Vec<u32> = vec![];
-
-        // Loop over elves
-        while i < split.len() {
-            // Get the next elf
-            let elf: Vec<u32> = split[i..split.len()]
-                .iter()
-                .map_while(|x| x.parse::<u32>().ok())
-                .collect();
-            i += elf.len() + 1;
-            result.push(elf.iter().sum())
-        }
-
-        // Sort by most calories
-        result.sort_by(|a, b| b.cmp(a));
-
-        // Return the sum of the top 3
-        result.iter().take(3).sum::<u32>().to_string()
+        let mut elves: Vec<u32> = split
+            .split(|x| x.is_empty())
+            .map(|x| x.iter().map(|c| c.parse::<u32>().unwrap()).sum())
+            .collect();
+        elves.sort_by(|a, b| b.cmp(a));
+        elves.iter().take(3).sum::<u32>().to_string()
     }
 }
 
