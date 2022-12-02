@@ -2,7 +2,7 @@
 name = "aoc2022"
 version = "0.1.0"
 edition = "2021"
-authors = ["Yves Bonami<yves.bonami@gmail.com"]
+authors = ["Yves Bonami<yves.bonami@gmail.com>"]
 description = "Solutions to the Advent of Code 2022"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

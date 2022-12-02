@@ -13,7 +13,7 @@ impl crate::Puzzle for DayOne {
     }
 
     fn part_one(&self) -> String {
-        let split = DayOne::split_input(self.input);
+        let split = Self::split_input(self.input);
         let mut elves: Vec<u32> = split
             .split(|x| x.is_empty())
             .map(|x| x.iter().map(|c| c.parse::<u32>().unwrap()).sum())
@@ -23,7 +23,7 @@ impl crate::Puzzle for DayOne {
     }
 
     fn part_two(&self) -> String {
-        let split = DayOne::split_input(self.input);
+        let split = Self::split_input(self.input);
         let mut elves: Vec<u32> = split
             .split(|x| x.is_empty())
             .map(|x| x.iter().map(|c| c.parse::<u32>().unwrap()).sum())
