@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use std::{fmt::Display, str::FromStr};
 
 /// --- Day 2: Rock Paper Scissors ---

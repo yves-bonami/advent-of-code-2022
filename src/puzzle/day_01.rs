@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use std::fmt::Display;
 
 /// --- Day 1: Calorie Counting ---
