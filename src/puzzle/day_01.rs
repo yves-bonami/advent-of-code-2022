@@ -34,7 +34,7 @@ impl crate::Puzzle for DayOne {
 impl DayOne {
     fn split_input(input: &str) -> Vec<&str> {
         input
-            .split_terminator("\n")
+            .lines()
             .into_iter()
             .map(|x| x.trim())
             .collect::<Vec<&str>>()
