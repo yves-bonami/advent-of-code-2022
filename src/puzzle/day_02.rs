@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use std::{fmt::Display, str::FromStr};
 
 /// --- Day 2: Rock Paper Scissors ---
@@ -41,7 +39,7 @@ impl crate::Puzzle for DayTwo {
 impl DayTwo {
     fn split_input(input: &str) -> Vec<&str> {
         input
-            .split_terminator("\n")
+            .lines()
             .into_iter()
             .map(|x| x.trim())
             .collect::<Vec<&str>>()

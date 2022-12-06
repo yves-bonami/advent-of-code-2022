@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use std::fmt::Display;
 
 /// --- Day 1: Calorie Counting ---
@@ -36,7 +34,7 @@ impl crate::Puzzle for DayOne {
 impl DayOne {
     fn split_input(input: &str) -> Vec<&str> {
         input
-            .split_terminator("\n")
+            .lines()
             .into_iter()
             .map(|x| x.trim())
             .collect::<Vec<&str>>()
